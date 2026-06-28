@@ -1,0 +1,99 @@
+{
+  "_comment": "OpenEEG v0.1.0 example — a 10-minute Muse 2 recording (4 channels, 256 Hz). The matching .openeeg.dat file would contain 4 channels × 153,600 samples × 4 bytes = 2,457,600 bytes of little-endian float32 data, row-major by channel.",
+  "_note_about_synthetic_data": "All numeric values in this example are illustrative. The samples data field references a binary file that is NOT included in this repository (would be ~2.4 MB and is not human-readable). Use this JSON as a template for your own recordings.",
+
+  "openeeg_version": "0.1.0",
+
+  "session": {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "subject_id": "subj-7f3a",
+    "started_at": "2026-06-28T14:23:01Z",
+    "ended_at": "2026-06-28T14:33:01Z",
+    "duration_seconds": 600.0,
+    "notes": "Quiet indoor recording. Subject seated, eyes-open/eyes-closed alternation protocol."
+  },
+
+  "device": {
+    "manufacturer": "Interaxon",
+    "model": "Muse 2",
+    "firmware_version": "3.5.0",
+    "serial_number": "M2-REDACTED-001",
+    "driver": "muse-lsl",
+    "driver_version": "1.0.0"
+  },
+
+  "channels": [
+    {
+      "index": 0,
+      "label": "TP9",
+      "position": "10-20",
+      "reference": "Fpz",
+      "units": "microvolts",
+      "impedance_kohms": 4.2,
+      "filter": { "highpass_hz": 0.1, "lowpass_hz": 100.0, "notch_hz": 60.0 }
+    },
+    {
+      "index": 1,
+      "label": "AF7",
+      "position": "10-20",
+      "reference": "Fpz",
+      "units": "microvolts",
+      "impedance_kohms": 3.8,
+      "filter": { "highpass_hz": 0.1, "lowpass_hz": 100.0, "notch_hz": 60.0 }
+    },
+    {
+      "index": 2,
+      "label": "AF8",
+      "position": "10-20",
+      "reference": "Fpz",
+      "units": "microvolts",
+      "impedance_kohms": 3.5,
+      "filter": { "highpass_hz": 0.1, "lowpass_hz": 100.0, "notch_hz": 60.0 }
+    },
+    {
+      "index": 3,
+      "label": "TP10",
+      "position": "10-20",
+      "reference": "Fpz",
+      "units": "microvolts",
+      "impedance_kohms": 4.0,
+      "filter": { "highpass_hz": 0.1, "lowpass_hz": 100.0, "notch_hz": 60.0 }
+    }
+  ],
+
+  "data": {
+    "format": "float32_le",
+    "shape": [4, 153600],
+    "file": "subj-7f3a_sess-20260628-142301.openeeg.dat",
+    "sha256": "REPLACE_WITH_SHA256_OF_BINARY_FILE_AT_WRITE_TIME"
+  },
+
+  "annotations": [
+    { "timestamp_seconds": 0.0,   "label": "session_start" },
+    { "timestamp_seconds": 30.0,  "label": "settled", "metadata": { "instruction": "wait for signal to relax" } },
+    { "timestamp_seconds": 60.0,  "label": "eyes_open",  "duration_seconds": 60.0 },
+    { "timestamp_seconds": 120.0, "label": "eyes_closed", "duration_seconds": 120.0 },
+    { "timestamp_seconds": 240.0, "label": "eyes_open",  "duration_seconds": 60.0 },
+    { "timestamp_seconds": 300.0, "label": "eyes_closed", "duration_seconds": 120.0 },
+    { "timestamp_seconds": 420.0, "label": "eyes_open",  "duration_seconds": 60.0 },
+    { "timestamp_seconds": 480.0, "label": "free_recording", "duration_seconds": 120.0, "metadata": { "instruction": "subject chooses any activity" } },
+    { "timestamp_seconds": 600.0, "label": "session_end" }
+  ],
+
+  "metadata": {
+    "environment": "indoor_quiet",
+    "subject_age_group": "30-40",
+    "subject_handedness": "right",
+    "experiment_protocol": "open_closed_5min_v1",
+    "recording_software": "openeeg-recorder 0.1.0-alpha",
+    "operator": "stanley"
+  },
+
+  "extensions": {
+    "muse2": {
+      "headband_color": "black",
+      "battery_pct_at_start": 87,
+      "battery_pct_at_end": 71
+    }
+  }
+}
