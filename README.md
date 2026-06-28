@@ -33,6 +33,17 @@ This means a Muse 2 user cannot share data with an OpenBCI user. A researcher ca
   - A **converter** (CLI tool: `openeeg convert --from muse2 --to openeeg file.muse`)
   - **Documentation**, examples, and a community
 
+## Validation scope (v0.1, honest)
+
+v0.1 has been developed and validated against **one Muse 2 unit** — the only EEG headset currently owned by the project steward. The format is designed to generalize to other hardware, but:
+
+- ✅ **Validated against:** Muse 2 (TP9, AF7, AF8, TP10, 256 Hz, firmware 3.5.0)
+- 🟡 **Designed-for but unvalidated against:** OpenBCI (Cyton, Ganglion), PiEEG, Olimex EEG-SMT (OpenEEG P2), homebrew ADS1299 rigs
+
+The schema in [`SPEC.md`](SPEC.md) was written to be hardware-agnostic (channel-agnostic, sampling-rate-agnostic, units-agnostic where possible), but the **reference implementation** and **example data** in this repository are Muse 2 specific until converter contributions arrive. This is honest scope, not aspiration — see [`docs/manifesto.md`](docs/manifesto.md) for the full reasoning and [`docs/roadmap.md`](docs/roadmap.md) for the converter plan.
+
+If you own a different device, the most useful thing you can do is **try the spec against your data** and report what breaks. Open an issue with a sample recording and we'll work through it.
+
 ## Quick example
 
 A 10-minute Muse 2 recording, 4 channels, 256 Hz:
