@@ -1,0 +1,52 @@
+# OpenEEG spec .gitignore
+# Documentation-first repository: keep the working tree clean.
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.emacs.d/
+
+# Python (for future reference implementation)
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Node (for docs site generators)
+node_modules/
+.pnpm-store/
+
+# Build artifacts
+dist/
+build/
+*.egg
+
+# Local env / secrets
+.env
+.env.local
+*.pem
+*.key
+
+# Large binary files (samples are in examples/ but full sessions are not tracked)
+*.openeeg.dat
+examples/*.openeeg.dat
+
+# OS-generated metadata
+._*
+.fseventsd/
+.Spotlight-V100/
+.Trashes/
